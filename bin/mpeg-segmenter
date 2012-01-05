@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'mpegts/segmenter'
+
+MPEGTS::MpegSegmenterCLI.execute(ARGV);
