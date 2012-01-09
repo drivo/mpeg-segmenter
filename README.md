@@ -17,7 +17,16 @@ video clip. All we need to do is:
 
 Installation
 ------------
-TBD
+
+A 1.9.x Ruby platform is required.
+
+> gem install pkg/mpeg-segmenter-0.3.0.gem
+
+After installation, two executables will be make available:
+
+> mpeg-segmenter
+
+> m3u8-playlist-generator
 
 Encoding
 -------------
