@@ -13,7 +13,7 @@ Apple recently defined a new standard for video streaming, currently as draft at
 [IETF](http://tools.ietf.org/html/draft-pantos-http-live-streaming-07), called HTTP Live Streaming.
 
 HTTP Live Streaming is the only protocol allowed for delivering video to iOS devices (i.e. iPhone, iPad and iPod).
-It is based on top the HTTP protocol and leverage on MPEG TS format defined in the MPEG part 1 specification (ISO 13818-1).
+It is based on top the HTTP protocol and leverages on MPEG TS format defined in the MPEG part 1 specification (ISO 13818-1).
 
 General procedure
 -----------------
