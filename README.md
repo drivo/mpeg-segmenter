@@ -30,7 +30,7 @@ video clip. All we need to do is:
 
 A typical flow involves these different actors which act in the following way:
 
-<img src="https://github.com/setumiami/mpeg-segmenter/blob/master/doc/mpeg-segmenter-flow.png" />
+!(https://github.com/setumiami/mpeg-segmenter/blob/master/doc/mpeg-segmenter-flow.png)
 
 Installation
 ------------
@@ -43,6 +43,7 @@ After installation, you can decide to use `mpeg-segmenter' as Ruby library or us
 the following executables:
 
     * `mpeg-segmenter`. It segments a TS file in multiple files time aligned.
+    
     * `m3u8-playlist-generator`. It generates the variant playlist (main m3u8 file).
 
 Encoding
