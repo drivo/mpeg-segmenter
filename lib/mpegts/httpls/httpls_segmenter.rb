@@ -124,29 +124,27 @@ module HTTPLiveStreaming
                 #    puts "Audio stream: " + i.is_audio_stream.to_s
                 #    puts "Stream number: " + i.stream_number.to_s
 
-                if(i.pts_defined)
-                    if(reference_time.nil?)
-                        # The first time we get a PTS, we need to setup the reference_time
-                        reference_time = i.pts2seconds
-                    end
+               if(reference_time.nil?)
+                   # The first time we get a PTS, we need to setup the reference_time
+                    reference_time = i.pts2seconds
+                end
 
-                    absolute_time = i.pts2seconds - reference_time
-                    #puts "PTS value: " + i.pts.to_s
-                    #puts "PTS relative value (in seconds): " + "%0.4f" % i.pts2seconds.to_s
-                    #puts "PTS absolute value (in seconds): " + "%0.4f" % (absolute_time).to_s
-                    #puts "PTS type: " + (i.pts).class.to_s
+                absolute_time = i.pts2seconds - reference_time
+                #puts "PTS value: " + i.pts.to_s
+                #puts "PTS relative value (in seconds): " + "%0.4f" % i.pts2seconds.to_s
+                #puts "PTS absolute value (in seconds): " + "%0.4f" % (absolute_time).to_s
+                #puts "PTS type: " + (i.pts).class.to_s
 
-                    if(absolute_time >= duration_per_segment)
-                        reference_time =  i.pts2seconds
-                        @m3u8file.insertMedia
-                        copy_segments_to_file( @inputFile,                    # Input .TS file
-                            last_segment_copied,          # From segment
-                            last_association_table,       # To segment
-                            @destinationFile % file_count  # Output .TS segment file
-                        )
-                        last_segment_copied = last_association_table
-                        file_count += 1
-                    end
+                if(absolute_time >= duration_per_segment)
+                    reference_time =  i.pts2seconds
+                    @m3u8file.insertMedia
+                    copy_segments_to_file( @inputFile,                    # Input .TS file
+                         last_segment_copied,          # From segment
+                         last_association_table,       # To segment
+                         @destinationFile % file_count  # Output .TS segment file
+                    )
+                    last_segment_copied = last_association_table
+                    file_count += 1
                 end
                 #    puts "-----------------"
             end
